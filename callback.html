@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koda Publisher · Connecting</title>
+<style>body { font: 16px/1.6 system-ui, sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; background: #fff; color: #1a1a1a; }</style>
+</head>
+<body>
+<h1>Koda Publisher</h1>
+<p id="msg">Finishing the connection on your computer…</p>
+<script>
+  // Forwards the login result to the Koda Publisher script running on the owner's own computer.
+  // Nothing is stored or sent anywhere else.
+  var q = window.location.search;
+  if (q) {
+    window.location.replace("http://127.0.0.1:8765/callback" + q);
+  } else {
+    document.getElementById("msg").textContent = "Nothing to do here.";
+  }
+</script>
+</body>
+</html>
